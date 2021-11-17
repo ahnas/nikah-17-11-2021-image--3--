@@ -1,0 +1,120 @@
+
+{% extends 'web/base.html' %}
+{% load static %}
+{% block title %}Add Photos{% endblock %}
+
+
+{% block content %}
+{% include "web/partials/header2.html" %}
+    
+    <section class="explore pb-0">
+      <div class="container">
+          <div class="row exx inter">
+              
+              
+              <div class="col-12 smsm">
+                <p>Hello, Username <span><i class="icofont-hand" style="color: #cfcc1e;"></i></span></p> 
+              </div>
+            </div>
+              <div class="col-6 hrr d-none  ">  
+
+              </div>
+              <div class="row inter kert justify-content-center">
+              <div class="col-lg-8 col-md-10 col-sm-10 col-11 exxd">
+                  <ul class="d-flex justify-content-center p-0">
+                    <li>  <a href="{% url 'web:myprofile' %}">My Profile </a></li>
+                    <li>  <a  href="{% url 'web:partnerpref' %}">Partner Preferences </a></li>
+                    <li>  <a class="activee" href="{% url 'web:addphotos' %}">Add Photos</a></li>
+                    <li>  <a  href="{% url 'web:changepass' %}">Change Password</a></li>
+                     
+                  </ul>
+              </div>
+            </div>
+          
+          
+      </div>
+    </section>
+    
+
+
+    <div class="container text-center shots">
+        <p class="mb-5">Add your best shots <i style="color: red;" class="icofont-nerd-smile"></i></p>
+        <!-- <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                <img  width="100%" src="{% static 'web/image/profile.jpg' %}" alt="dfsd">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 plus ">
+                <img width="100%" src="{% static 'web/image/plus.png' %}" alt="dfsd">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 plus shots-sm">
+                <img width="100%" src="{% static 'web/image/plus.png' %}" alt="dfsd">
+            </div>
+
+            <div class="col-12">
+            <button class="btn mt-5">Save Changes</button>
+            </div>
+
+        </div> -->
+        <form  id="propicUpload" name="propicUpload"  method="POST"  enctype="multipart/form-data">
+                        
+            {% csrf_token %}
+                 <div id="ImageCollect" class="form-group row" style="place-content: center;">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-3" id="div-image-upload-id1">
+                    <img id="viewImageId" style="width: 220px;" class="mb-3" src="{% static 'web/image/avathar.png' %}" alt="SHow">
+                    <input type="file" class ='form-control' id="image1" name="image1">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-3" id="div-image-upload-id2">
+                    <img id="viewImageIdtwo" style="width: 220px;" class="mb-3" src="{% static 'web/image/avathar.png' %}" alt="SHow">
+                    <input type="file" class ='form-control' id="image_two" name="image_two" >
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-3"  id="div-image-upload-id3">
+                    <img id="viewImageIdthree" style="width: 220px;" class="mb-3" src="{% static 'web/image/avathar.png' %}" alt="SHow">
+                    <input type="file" class ='form-control' id="image_three" name="image_three" >
+                </div>
+                
+            </div>
+
+           
+
+            <div class="form-group row text-center">
+                <div class="col" id="buttons">
+                    <button id="btnNotNow" type="button" class="skip-btn btn">Update</button>
+            </div>
+            <div id="next">
+
+            </div>
+            </div>
+                
+
+        </form>
+    </div>
+        
+
+    <!-- <div class="container pager mt-3">
+        <div class="row member justify-content-center trmatch">
+
+
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12 text-center">
+                <i class="icofont-ui-love-add ma" style="color: #1C57C9;"></i>
+                <p class="maa">You have no Matches now</p>
+            </div>
+            
+            
+
+            
+
+        </div>
+    </div> -->
+
+      
+    {% include "web/partials/mobilefooter.html" %}
+
+
+        
+    {% endblock %}
+    {% block javascript %}
+    <script src="{% static 'web/js/getmachedprofiles.js' %}"></script>
+
+    <script src="{% static 'web/js/header.js' %}"></script>
+    <script src="{% static 'web/js/updatephotos.js' %}"></script>
+    {% endblock %}

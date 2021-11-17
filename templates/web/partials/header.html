@@ -1,0 +1,25 @@
+{% load static %}
+
+<header id="header" class="fixed-top headr">
+  <div class="container-fluid d-flex justify-content-between place-items-center">
+
+    <a href="{% url 'web:index' %}"><img class="logo-img" src="{% static 'web/image/logo.png' %}"  alt=""></a>
+
+    
+    {% if is_index %}
+
+    <div class="ribtns pr-5" id="username" >
+      <span style="color: black;"> <span class="phone-sign">Already a member?</span><a class="news ml-4" href="{% url 'web:login' %}">Sign in</a></span> 
+    </div>
+
+    
+    
+    {% endif %}
+
+    
+
+  </div>
+
+  </div>
+</header> 
+<!-- End Header -->
